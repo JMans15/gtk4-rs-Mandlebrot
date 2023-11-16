@@ -10,10 +10,10 @@ use std::rc::Rc;
 
 const APP_ID: &str = "org.gtk_rs.mandelbrot";
 
-const MAX_ITER: u32 = 200;
+const MAX_ITER: u32 = 1000;
 const DIVERGE_TRESH_SQ: f64 = 4.0;
-const CANVAS_W: u32 = 1280;
-const CANVAS_H: u32 = 720;
+const CANVAS_W: u32 = 640;
+const CANVAS_H: u32 = 360;
 const ZOOM_INC: f64 = 2.0;
 
 // Precision used for computations
@@ -107,7 +107,7 @@ fn build_ui(app: &Application) {
         .build();
 
     let canvas = DrawingArea::new();
-    canvas.set_size_request(1280, 720);
+    canvas.set_size_request(CANVAS_W as i32, CANVAS_H as i32);
     let l = Rc::new(Cell::new(-2.96444));
     let r = Rc::new(Cell::new(1.44444));
     let b = Rc::new(Cell::new(-1.24));
